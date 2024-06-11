@@ -11,9 +11,9 @@ public class HelloWorldController {
         return "Hola, " + nom + ". Estàs executant un projecte Maven";
     }
 
-    @GetMapping("/saluda2")
-    public String saluda2(@PathVariable(value="nom", required=false)String nom){
-        return "Hola, " + nom + ". Estàs executant un projecte Maven";
+    @GetMapping({"/saluda2","/saluda2/{name}"})
+    public String saluda2(@PathVariable(required=false)String name){
+        return "Hola, " + name + ". Estàs executant un projecte Maven";
     }
 
 }
