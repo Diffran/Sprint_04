@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/")
 public class HelloWorldController {
-
+    public static final String DEFAULT_NAME="Unknown";
     @GetMapping("/saluda")
-    public String saluda(@RequestParam(value="nom", defaultValue="Unknown") String nom){
+    public String saluda(@RequestParam(value="nom", defaultValue=DEFAULT_NAME) String nom){
         return "Hola, " + nom + ". Estàs executant un projecte Maven";
     }
 
