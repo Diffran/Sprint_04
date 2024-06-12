@@ -1,0 +1,119 @@
+{
+	"info": {
+		"_postman_id": "01dda108-f34f-42f3-9cd1-37e18050eb87",
+		"name": "S04T01N3_Gradle",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36245910"
+	},
+	"item": [
+		{
+			"name": "Get saludo requestParam",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}{{port}}{{saluda}}?name=Diana",
+					"host": [
+						"{{server}}{{port}}{{saluda}}"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Diana"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get saludo2 pathVariable",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}{{port}}{{saluda2}}/Diana",
+					"host": [
+						"{{server}}{{port}}{{saluda2}}"
+					],
+					"path": [
+						"Diana"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get saludo default",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}{{port}}{{saluda}}",
+					"host": [
+						"{{server}}{{port}}{{saluda}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get saludo2 optional",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}{{port}}{{saluda2}}",
+					"host": [
+						"{{server}}{{port}}{{saluda2}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "server",
+			"value": "http://localhost:",
+			"type": "string"
+		},
+		{
+			"key": "port",
+			"value": "9001/",
+			"type": "string"
+		},
+		{
+			"key": "saluda",
+			"value": "saluda",
+			"type": "string"
+		},
+		{
+			"key": "saluda2",
+			"value": "saluda2",
+			"type": "string"
+		}
+	]
+}
