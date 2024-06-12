@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.*;
 public class HelloWorldController {
     public static final String DEFAULT_NAME="Unknown";
     @GetMapping("/saluda")
-    public String saluda(@RequestParam(value="nom", defaultValue=DEFAULT_NAME) String nom){
-        return "Hola, " + nom + ". Estàs executant un projecte Maven";
+    public String saluda(@RequestParam(value="name", defaultValue=DEFAULT_NAME) String name){
+        return "Hola, " + name + ". Estàs executant un projecte Maven";
     }
 
     @GetMapping({"/saluda2","/saluda2/{name}"})
