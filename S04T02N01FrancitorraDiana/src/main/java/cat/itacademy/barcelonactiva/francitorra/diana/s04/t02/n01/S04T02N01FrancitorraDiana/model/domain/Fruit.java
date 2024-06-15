@@ -10,7 +10,7 @@ public class Fruit {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name="fruita")
+    @Column(name="fruit")
     private String name;
     @Column(name="kg")
     private int kgQuantity;
