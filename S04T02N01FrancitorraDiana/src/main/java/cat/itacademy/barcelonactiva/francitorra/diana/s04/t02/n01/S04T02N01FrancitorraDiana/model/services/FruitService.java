@@ -18,9 +18,9 @@ public class FruitService {
     }
 
     public Fruit createFruit(Fruit fruit){
-        if(fruitRepository.findByName(fruit.getName()).isPresent()){
+        if(fruitRepository.findByName(fruit.getName()).isPresent()||fruitRepository.findById(fruit.getId()).isPresent()){
             throw new IllegalArgumentException("Create new Fruit Failed: Invalid fruit name: "+ fruit.getName()+
-                    " -> ALREADY EXISTS in DataBase");
+                    " or ID: "+fruit.getId()+" -> ALREADY EXISTS in DataBase");
         }
 
         return fruitRepository.save(fruit);
