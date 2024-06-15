@@ -4,15 +4,14 @@ import jakarta.persistence.*;
 
 
 @Entity
-@Table(name = "Fruit")
 public class Fruit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name="fruit")
+
     private String name;
-    @Column(name="kg")
+
     private int kgQuantity;
 
     public Fruit(){
