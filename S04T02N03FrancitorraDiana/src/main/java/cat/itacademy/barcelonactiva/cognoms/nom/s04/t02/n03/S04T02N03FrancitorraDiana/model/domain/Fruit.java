@@ -1,19 +1,16 @@
 package cat.itacademy.barcelonactiva.cognoms.nom.s04.t02.n03.S04T02N03FrancitorraDiana.model.domain;
 
 import jakarta.persistence.*;
+
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
 @Document(collection="fruits")
 public class Fruit {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-
-
+    private String id;
     private String name;
-
-
     private int kgQuantity;
 
     public Fruit(){
@@ -24,11 +21,11 @@ public class Fruit {
         this.kgQuantity=kgQuantity;
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

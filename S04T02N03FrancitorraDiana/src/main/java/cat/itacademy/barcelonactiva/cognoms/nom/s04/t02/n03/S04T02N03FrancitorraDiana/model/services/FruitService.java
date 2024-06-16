@@ -28,7 +28,7 @@ public class FruitService {
     }
 
     public Fruit updateFruit(Fruit fruit){
-        if(!fruitRepository.findById(fruit.getId()).isPresent()){
+        if(!fruitRepository.findById(fruit.getId()).isPresent()) {
             throw new EntityNotFoundException("Update Fruit Failed: Invalid fruit id: "+ fruit.getId()+
                     " -> DOESN'T EXIST in DataBase");
         }
@@ -36,7 +36,7 @@ public class FruitService {
         return fruitRepository.save(fruit);
     }
 
-    public void  deleteFruit(long fruitId){
+    public void  deleteFruit(String fruitId){
         if(!fruitRepository.findById(fruitId).isPresent()){
             throw new EntityNotFoundException("Delete Fruit Failed: Invalid fruit id: "+ fruitId+
                     " -> DOESN'T EXIST in DataBase");
@@ -45,7 +45,7 @@ public class FruitService {
         fruitRepository.deleteById(fruitId);
     }
 
-    public Fruit getOneFruit(long fruitId){
+    public Fruit getOneFruit(String fruitId){
         return fruitRepository.findById(fruitId)
                 .orElseThrow(() -> new EntityNotFoundException("Get One Fruit Failed: Invalid fruit id: "+ fruitId+
                         " -> DOESN'T EXIST in DataBase"));

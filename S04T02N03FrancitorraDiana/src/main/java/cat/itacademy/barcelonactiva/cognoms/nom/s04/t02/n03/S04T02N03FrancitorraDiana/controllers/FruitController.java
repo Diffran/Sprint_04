@@ -3,6 +3,7 @@ package cat.itacademy.barcelonactiva.cognoms.nom.s04.t02.n03.S04T02N03Francitorr
 import cat.itacademy.barcelonactiva.cognoms.nom.s04.t02.n03.S04T02N03FrancitorraDiana.model.domain.Fruit;
 import cat.itacademy.barcelonactiva.cognoms.nom.s04.t02.n03.S04T02N03FrancitorraDiana.model.services.FruitService;
 import jakarta.persistence.EntityNotFoundException;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -35,7 +36,7 @@ public class FruitController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> deleteFruit(@PathVariable("id") Long fruitId){
+    public ResponseEntity<?> deleteFruit(@PathVariable("id") String fruitId){
         try {
             fruitService.deleteFruit(fruitId);
             return ResponseEntity.noContent().build();
@@ -47,7 +48,7 @@ public class FruitController {
     }
 
     @GetMapping("/getOne/{id}")
-    public ResponseEntity<?> getOneFruit(@PathVariable("id") Long fruitId){
+    public ResponseEntity<?> getOneFruit(@PathVariable("id") String fruitId){
         try{
             return ResponseEntity.ok().body(fruitService.getOneFruit(fruitId));
         }catch(EntityNotFoundException e){
