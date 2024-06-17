@@ -12,9 +12,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{server}}{{port}}{{saluda}}?name=Diana",
+					"raw": "{{server}}{{port}}{{HelloWorld}}?name=Diana",
 					"host": [
-						"{{server}}{{port}}{{saluda}}"
+						"{{server}}{{port}}{{HelloWorld}}"
 					],
 					"query": [
 						{
@@ -32,9 +32,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{server}}{{port}}{{saluda2}}/Diana",
+					"raw": "{{server}}{{port}}{{HelloWorld2}}/Diana",
 					"host": [
-						"{{server}}{{port}}{{saluda2}}"
+						"{{server}}{{port}}{{HelloWorld2}}"
 					],
 					"path": [
 						"Diana"
@@ -49,9 +49,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{server}}{{port}}{{saluda}}",
+					"raw": "{{server}}{{port}}{{HelloWorld}}",
 					"host": [
-						"{{server}}{{port}}{{saluda}}"
+						"{{server}}{{port}}{{HelloWorld}}"
 					]
 				}
 			},
@@ -63,9 +63,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{server}}{{port}}{{saluda2}}",
+					"raw": "{{server}}{{port}}{{HelloWorld2}}",
 					"host": [
-						"{{server}}{{port}}{{saluda2}}"
+						"{{server}}{{port}}{{HelloWorld2}}"
 					]
 				}
 			},
@@ -106,13 +106,13 @@
 			"type": "string"
 		},
 		{
-			"key": "saluda",
-			"value": "saluda",
+			"key": "HelloWorld",
+			"value": "HelloWorld",
 			"type": "string"
 		},
 		{
-			"key": "saluda2",
-			"value": "saluda2",
+			"key": "HelloWorld2",
+			"value": "HelloWorld2",
 			"type": "string"
 		}
 	]
