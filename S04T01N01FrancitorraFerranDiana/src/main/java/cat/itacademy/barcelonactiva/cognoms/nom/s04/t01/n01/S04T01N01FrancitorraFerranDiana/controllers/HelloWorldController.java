@@ -3,7 +3,6 @@ package cat.itacademy.barcelonactiva.cognoms.nom.s04.t01.n01.S04T01N01Francitorr
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/")
 public class HelloWorldController {
     public static final String DEFAULT_NAME="Unknown";
     @GetMapping("/HelloWorld")
