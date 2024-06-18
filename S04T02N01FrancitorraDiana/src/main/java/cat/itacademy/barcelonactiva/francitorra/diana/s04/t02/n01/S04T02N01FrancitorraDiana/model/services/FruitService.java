@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class FruitService {
+public class FruitService implements IFruitServiceCrud{
     private IFruitRepository fruitRepository;
 
     @Autowired
@@ -17,6 +17,7 @@ public class FruitService {
         this.fruitRepository = fruitRepository;
     }
 
+    @Override
     public Fruit createFruit(Fruit fruit){
         if(fruitRepository.findByName(fruit.getName()).isPresent()||fruitRepository.findById(fruit.getId()).isPresent()){
             throw new IllegalArgumentException("Create new Fruit Failed: Invalid fruit name: "+ fruit.getName()+
@@ -26,6 +27,7 @@ public class FruitService {
         return fruitRepository.save(fruit);
     }
 
+    @Override
     public Fruit updateFruit(Fruit fruit){
         if(!fruitRepository.findById(fruit.getId()).isPresent()){
             throw new EntityNotFoundException("Update Fruit Failed: Invalid fruit id: "+ fruit.getId()+
@@ -35,6 +37,7 @@ public class FruitService {
         return fruitRepository.save(fruit);
     }
 
+    @Override
     public void  deleteFruit(long fruitId){
         if(!fruitRepository.findById(fruitId).isPresent()){
             throw new EntityNotFoundException("Delete Fruit Failed: Invalid fruit id: "+ fruitId+
@@ -44,12 +47,14 @@ public class FruitService {
         fruitRepository.deleteById(fruitId);
     }
 
+    @Override
     public Fruit getOneFruit(long fruitId){
         return fruitRepository.findById(fruitId)
                 .orElseThrow(() -> new EntityNotFoundException("Get One Fruit Failed: Invalid fruit id: "+ fruitId+
                         " -> DOESN'T EXIST in DataBase"));
     }
 
+    @Override
     public List<Fruit> getAllFruits(){
         return fruitRepository.findAll();
     }
