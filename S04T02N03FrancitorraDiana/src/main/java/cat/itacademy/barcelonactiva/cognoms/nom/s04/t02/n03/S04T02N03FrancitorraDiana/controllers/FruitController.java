@@ -2,6 +2,7 @@ package cat.itacademy.barcelonactiva.cognoms.nom.s04.t02.n03.S04T02N03Francitorr
 
 import cat.itacademy.barcelonactiva.cognoms.nom.s04.t02.n03.S04T02N03FrancitorraDiana.model.domain.Fruit;
 import cat.itacademy.barcelonactiva.cognoms.nom.s04.t02.n03.S04T02N03FrancitorraDiana.model.services.FruitService;
+import jakarta.persistence.EntityExistsException;
 import jakarta.persistence.EntityNotFoundException;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class FruitController {
     public ResponseEntity<?> addFruit(@RequestBody Fruit fruit){
         try {
             return ResponseEntity.status(HttpStatus.CREATED).body(fruitService.createFruit(fruit));
-        }catch(IllegalArgumentException  e){
+        }catch(EntityExistsException e){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
     }

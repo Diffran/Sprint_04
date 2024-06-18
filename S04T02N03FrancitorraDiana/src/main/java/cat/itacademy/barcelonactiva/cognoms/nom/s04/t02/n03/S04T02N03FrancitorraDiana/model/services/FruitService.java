@@ -2,6 +2,7 @@ package cat.itacademy.barcelonactiva.cognoms.nom.s04.t02.n03.S04T02N03Francitorr
 
 import cat.itacademy.barcelonactiva.cognoms.nom.s04.t02.n03.S04T02N03FrancitorraDiana.model.domain.Fruit;
 import cat.itacademy.barcelonactiva.cognoms.nom.s04.t02.n03.S04T02N03FrancitorraDiana.model.repository.IFruitRepository;
+import jakarta.persistence.EntityExistsException;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,7 +22,7 @@ public class FruitService implements IFruitServiceCrud{
     @Override
     public Fruit createFruit(Fruit fruit){
         if(fruitRepository.findByName(fruit.getName()).isPresent()||fruitRepository.findById(fruit.getId()).isPresent()){
-            throw new IllegalArgumentException("Create new Fruit Failed: Invalid fruit name: "+ fruit.getName()+
+            throw new EntityExistsException("Create new Fruit Failed: Invalid fruit name: "+ fruit.getName()+
                     " or ID: "+fruit.getId()+" -> ALREADY EXISTS in DataBase");
         }
 
