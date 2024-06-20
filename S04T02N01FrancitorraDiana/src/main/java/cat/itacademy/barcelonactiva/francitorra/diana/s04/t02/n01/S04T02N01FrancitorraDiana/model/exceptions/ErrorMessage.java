@@ -1,4 +1,4 @@
-package cat.itacademy.barcelonactiva.francitorra.diana.s04.t02.n01.S04T02N01FrancitorraDiana.model.exception;
+package cat.itacademy.barcelonactiva.francitorra.diana.s04.t02.n01.S04T02N01FrancitorraDiana.model.exceptions;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
